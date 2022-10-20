@@ -31,10 +31,10 @@ export class CardPokemonComponent implements OnInit {
           nextPage: result.nextPage,
           previousPage: result.previousPage,
           details: Promise.all<Promise<PokemonOne>[]>(result.detailsPokemon).then(
-            res => res.
+            res => console.log(res)
           )
-        } 
-       })    
+        }
+       })   
     )
 }
 
