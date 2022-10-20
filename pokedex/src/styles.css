@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.badge{
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.active {
+    font-weight: bold;
+    color: #000;
+    border-bottom: 3px solid #000;
+}
+
+a {
+    cursor: pointer;
+}
+
+

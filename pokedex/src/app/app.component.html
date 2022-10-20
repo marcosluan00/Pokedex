@@ -1,12 +1,13 @@
-<h1 class="font-bold text-2xl text-center m-4">Pokedex</h1>
-<main class="bg-slate-50 max-w-7xl
+<app-header></app-header>
+<!-- <main class="bg-slate-50 max-w-7xl
 grid
-sm:grid-cols-1
-md:grid-cols-2
-lg:grid-cols-3
-xl:grid-cols-4
+sm:grid-cols-2
+md:grid-cols-3
+lg:grid-cols-4
 " >
-  <div *ngFor="let pokemon of pokemonList" class="m-2">
+  <div *ngFor="let pokemon of pokemonList, let i = index" class="m-2">
     <app-card-pokemon [receberLista]="pokemon"></app-card-pokemon>
   </div>
-</main>
+</main> -->
+
+<router-outlet ></router-outlet>

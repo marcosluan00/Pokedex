@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { PokemonService } from './Core/Api/pokemon.service';
-import { POKEMONLIST } from './Core/Data/PokemonList';
-
 
 @Component({
   selector: 'app-root',
@@ -11,13 +8,9 @@ import { POKEMONLIST } from './Core/Data/PokemonList';
 export class AppComponent {
   title = 'pokedex';
 
- 
-  pokemonList = POKEMONLIST;
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit(): void {
-    console.log("Dados do app component");
   }
-
-  }
+}
 

@@ -1,7 +1,7 @@
 import { Pokemon } from "./Pokemon";
 
 export const POKEMONLIST: Pokemon[] = [
-    {
+    {   id: '1',
         name: "bulbasaur",
         url: "https://pokeapi.co/api/v2/pokemon/1/",
         detailsPokemon: {
@@ -37,7 +37,8 @@ export const POKEMONLIST: Pokemon[] = [
         }
     ],
     }},
-    {
+    {   
+        id: '2',
         name: "ivysaur",
         url: "https://pokeapi.co/api/v2/pokemon/1/",
         detailsPokemon: {
@@ -73,7 +74,8 @@ export const POKEMONLIST: Pokemon[] = [
         }
     ],
     }},
-    {
+    {   
+        id: '3',
         name: "venusaur",
         url: "https://pokeapi.co/api/v2/pokemon/1/",
         detailsPokemon: {
@@ -109,7 +111,7 @@ export const POKEMONLIST: Pokemon[] = [
         }
     ],
     }},
-    {
+    {   id: '4',
         name: "charmander",
         url: "https://pokeapi.co/api/v2/pokemon/1/",
         detailsPokemon: {
@@ -145,7 +147,8 @@ export const POKEMONLIST: Pokemon[] = [
         }
     ],
     }},
-    {
+    {   
+        id: '6',
         name: "charmeleon",
         url: "https://pokeapi.co/api/v2/pokemon/1/",
         detailsPokemon: {
@@ -181,7 +184,8 @@ export const POKEMONLIST: Pokemon[] = [
         }
     ],
     }},
-    {
+    {   
+        id: '7',
         name: "charizard",
         url: "https://pokeapi.co/api/v2/pokemon/1/",
         detailsPokemon: {
@@ -217,7 +221,8 @@ export const POKEMONLIST: Pokemon[] = [
         }
     ],
     }},
-    {
+    {   
+        id: '8',
         name: "squirtle",
         url: "https://pokeapi.co/api/v2/pokemon/1/",
         detailsPokemon: {
@@ -253,7 +258,8 @@ export const POKEMONLIST: Pokemon[] = [
         }
     ],
     }},
-    {
+    {   
+        id: '9',
         name: "wartortle",
         url: "https://pokeapi.co/api/v2/pokemon/1/",
         detailsPokemon: {
@@ -289,7 +295,7 @@ export const POKEMONLIST: Pokemon[] = [
         }
     ],
     }},
-    {
+    {   id: '10',
         name: "blastoise",
         url: "https://pokeapi.co/api/v2/pokemon/1/",
         detailsPokemon: {
