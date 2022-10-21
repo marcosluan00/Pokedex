@@ -4,8 +4,8 @@ import { CardPokemonComponent } from './components/card-pokemon/card-pokemon.com
 import { DetailsComponent } from './components/card-pokemon/details/details.component';
 
 const routes: Routes = [
-    { path: 'home', component: CardPokemonComponent},
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'pokemon', component: CardPokemonComponent},
+    { path: '', redirectTo: '/pokemon', pathMatch: 'full' },
     { path: 'pokemon/:id', component: DetailsComponent}
 ]
 

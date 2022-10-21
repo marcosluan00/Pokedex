@@ -1,21 +1,25 @@
-<main class="w-80 bg-cyan-100 ">
+<main class="w-96 shadow-2xl rounded-md" 
+    [ngStyle]="{
+    'background-color': colorCard
+    }">
     <header>
             <div class="p-3 grid grid-cols-4">
 
                    <div class="col-span-3">
-                    <p class="text-xl font-bold capitalize ">{{ pokemon.name }}</p>
-                    <div class="flex">
+                    <p class="text-xl font-bold capitalize ">{{ onePokemon.name }}</p>
+                    <div class="grid-cols-2">
                      <p class="badge text-xs font-semibold  capitalize mr-1 mt-1 w-1/4 text-center" 
-                     *ngFor="let type of pokemon.detailsPokemon.types">{{ type }}</p></div>
+                     *ngFor="let type of onePokemon.types">{{ type }}</p>
+                    </div>
                    </div>
 
-            <i> #00{{ pokemon.id }}</i>
+            <i> #00{{ onePokemon.order }}</i>
 
             </div>
             
     </header>
     <div class="flex justify-center drop-shadow-lg hover:animate-bounce">
-        <img [src]="pokemon.detailsPokemon.sprites" alt="{{ pokemon.name }}" class="w-32 h-32">
+        <img [src]="onePokemon.sprites.artwork_default" alt="{{ onePokemon.name }}" class="w-32 h-32">
     </div>
-    <app-modal [pokemonDetails]="pokemon.detailsPokemon"></app-modal>
+    <app-modal [pokemonDetails]="onePokemon"></app-modal>
 </main>

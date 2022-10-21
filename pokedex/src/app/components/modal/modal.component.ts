@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DETAILSPOKEMON, Pokemon } from 'src/app/Core/Data/Pokemon';
+import { PokemonOne } from 'src/app/Core/Data/Pokemon';
 
 @Component({
   selector: 'app-modal',
@@ -8,7 +8,7 @@ import { DETAILSPOKEMON, Pokemon } from 'src/app/Core/Data/Pokemon';
 })
 export class ModalComponent implements OnInit {
 
-  @Input() pokemonDetails!: DETAILSPOKEMON;
+  @Input() pokemonDetails!: PokemonOne;
 
   option: string = 'about'
   

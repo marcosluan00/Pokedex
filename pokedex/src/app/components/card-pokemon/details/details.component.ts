@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { POKEMONLIST } from 'src/app/Core/Data/PokemonList';
 
 import { ActivatedRoute } from '@angular/router';
-import { Pokemon } from 'src/app/Core/Data/Pokemon';
+import {  PokemonOne } from 'src/app/Core/Data/Pokemon';
+import { PokemonService } from 'src/app/Core/Api/pokemon.service';
+import { typesColors, typeColor } from 'src/app/shared/TypesColors';
 
 @Component({
   selector: 'app-details',
@@ -11,23 +12,32 @@ import { Pokemon } from 'src/app/Core/Data/Pokemon';
 })
 export class DetailsComponent implements OnInit {
 
-  pokemonList = POKEMONLIST;
+  onePokemon!: PokemonOne;
 
-  pokemon: Pokemon = {}as Pokemon;
+  pokemonID!: number;
 
-  option: string = 'about'
+  colorCard!: string;
 
-  
-  constructor(private route: ActivatedRoute) {
-   }
+  corzinha!: string;
+
+  constructor(private route: ActivatedRoute, private pokemonService: PokemonService) {}
 
    ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    let pokemonID = routeParams.get("id");
+    this.pokemonID = Number(routeParams.get("id"));
 
-    this.pokemon = this.pokemonList.find(pokemon => pokemon.id === pokemonID) || {} as Pokemon;
-
+    let url = `https://pokeapi.co/api/v2/pokemon/${this.pokemonID}/`
+    this.getOnePokemon(url)
   }
+
+  getOnePokemon(url: string){
+    this.pokemonService.getOnePokemon(url).subscribe(pokemon => {
+      this.onePokemon = pokemon;
+      this.colorCard = this.onePokemon.types[0]
+      console.log(this.colorCard)
+      
+    })
+  }
+  
+  
 }
-
-

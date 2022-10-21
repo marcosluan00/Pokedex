@@ -8,6 +8,7 @@ import { CardPokemonComponent } from './components/card-pokemon/card-pokemon.com
 import { DetailsComponent } from './components/card-pokemon/details/details.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { IndicatorBarComponent } from './shared/indicator-bar/indicator-bar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HeaderComponent } from './shared/header/header.component';
     CardPokemonComponent,
     DetailsComponent,
     ModalComponent,
-    HeaderComponent
+    HeaderComponent,
+    IndicatorBarComponent
   ],
   imports: [
     BrowserModule,
