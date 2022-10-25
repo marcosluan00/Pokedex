@@ -30,6 +30,7 @@ export class PokemonService {
       map(data => {
         return {
           order: data.order,
+          id: data.id,
           name: data.name,
           height: data.height,
           weight: data.weight,

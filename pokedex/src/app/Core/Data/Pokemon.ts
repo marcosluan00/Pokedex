@@ -1,4 +1,3 @@
-
 export interface PokemonApiType {
     count: number;
     next: string;
@@ -16,6 +15,7 @@ export interface PokemonList {
 
 export interface PokemonOne {
   order:number;
+  id: number;
   name: string;
   height:number;
   weight:number;
@@ -32,6 +32,7 @@ export interface PokemonOne {
 
 export interface PokemonApiDetails {
   order: number;
+  id: number;
   name: string;
   height: number;
   weight: number;
@@ -43,15 +44,9 @@ export interface PokemonApiDetails {
       stat: { name: string }
   }[]
 }
-
-
-interface BASESTATUS{
-    baseStatus: number;
-    statName: string;
-}
-// interface SPRINTES{
-//     officialArtwork: string;
-// }
-interface TYPES{
-    type: string;
+export interface PokemonListRequest {
+  nextPage: string;
+  previousPage: string;
+  details: Promise<PokemonOne[]>
+  //Promise<PokemonOne>[]
 }

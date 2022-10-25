@@ -9,9 +9,8 @@ export class IndicatorBarComponent implements OnInit {
 
   @Input() value: number = 0;
 
-  corIndicator: string = 'red'
-
-
+  corIndicator: string = ''
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -20,11 +19,12 @@ export class IndicatorBarComponent implements OnInit {
 
   changeColor(){
     if(this.value <= 30){
-      this.corIndicator = '#d42000'
+      this.corIndicator = 'linear-gradient(to right, #ff2600, #ad1a00)'
     }else if(this.value > 30 && this.value <= 70){
-      this.corIndicator = '#f5e042'
+      this.corIndicator = 'linear-gradient(to right, #ebf542, #ffdc3b)'
     }else{
-      this.corIndicator = 'green'
+      this.corIndicator = 'linear-gradient(to right, #01d700, #01b900)'
     }
   }
+
 }

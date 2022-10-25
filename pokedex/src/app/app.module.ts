@@ -9,6 +9,7 @@ import { DetailsComponent } from './components/card-pokemon/details/details.comp
 import { ModalComponent } from './components/modal/modal.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { IndicatorBarComponent } from './shared/indicator-bar/indicator-bar.component';
+import { BackgroundDirective } from './shared/diretivas/background.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { IndicatorBarComponent } from './shared/indicator-bar/indicator-bar.comp
     DetailsComponent,
     ModalComponent,
     HeaderComponent,
-    IndicatorBarComponent
+    IndicatorBarComponent,
+    BackgroundDirective
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { PokemonList, PokemonOne } from 'src/app/Core/Data/Pokemon';
+import { Component, OnInit } from '@angular/core';
+import { PokemonList, PokemonListRequest, PokemonOne } from 'src/app/Core/Data/Pokemon';
 import { PokemonService } from 'src/app/Core/Api/pokemon.service';
 import { map, Observable } from 'rxjs';
-import { typesColors } from 'src/app/shared/TypesColors';
 
 @Component({
   selector: 'app-card-pokemon',
@@ -11,16 +10,16 @@ import { typesColors } from 'src/app/shared/TypesColors';
 })
 export class CardPokemonComponent implements OnInit {
 
-  pokemon!: PokemonList;
-  
   pokemonRequest?: Observable<PokemonListRequest>;
 
-  colorCard!: string;
+  colorCard: string='normal';
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
+    
     this.getPokemonList()
+    
   }
 
   getPokemonList(){
@@ -37,10 +36,4 @@ export class CardPokemonComponent implements OnInit {
     
 }
   
-}
-
-interface PokemonListRequest {
-  nextPage: string;
-  previousPage: string;
-  details: Promise<PokemonOne[]>
 }

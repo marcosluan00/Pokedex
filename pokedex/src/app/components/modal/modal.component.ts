@@ -8,7 +8,7 @@ import { PokemonOne } from 'src/app/Core/Data/Pokemon';
 })
 export class ModalComponent implements OnInit {
 
-  @Input() pokemonDetails!: PokemonOne;
+  @Input() pokemonDetails: PokemonOne = {} as PokemonOne;
 
   option: string = 'about'
   
