@@ -1,0 +1,12 @@
+<form class="flex h-8 border-slate-800 ml-12" (ngSubmit)="pesquisar()" >
+
+    <input type="text" name="descricao" [(ngModel)]="pokemonName" 
+    class="box-border p-4 w-4/5 bg-slate-100
+    rounded-l-md
+    " 
+    >
+    <button type="submit" class="bg-slate-100 text-teal-100 w-10 rounded-r-md">
+        <img src="../../../assets/magnifying-glass-solid.svg" class="h-6 w-6 ml-2">
+    </button>
+    
+</form>
