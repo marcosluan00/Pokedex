@@ -1,16 +1,15 @@
-<main class="mx-6 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" >
+<main class="my-1 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" >
 
     <ng-container *ngIf="(pokemonRequest  | async) as pokemonR">
         <ng-container *ngIf="pokemonR.details">
             
-                <section *ngFor="let pokemon of pokemonR.details |async" class="bg-slate-50 max-w-6xl">
+                <section *ngFor="let pokemon of pokemonR.details |async" class="max-w-5xl">
 
                     <a class="p-2 shadow-md rounded-md grid grid-cols-2  my-2
                     xl:m-3 md:m-2 sm:m-1
                     hover:scale-105 " routerLink="/pokemon/{{pokemon.id}}"
                     [background]="pokemon.types[0]"
-                    
-                    >
+    >
                         <div class="p-1">
                             <p class="text-xl font-bold text-slate-100">{{ pokemon.name | uppercase}}</p>
                             <div class="badge p-1 mt-1 mr-12 text-center" *ngFor="let type of pokemon.types">
@@ -26,9 +25,6 @@
                 </section>
 
         </ng-container>
-        <div #elseBlock>
-
-        </div>
 
     </ng-container>
     

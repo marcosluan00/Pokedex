@@ -10,7 +10,7 @@ export class BackgroundDirective {
 
   @HostBinding('style.background-image') background: string ='';
 
-  //linear gradient
+
 
   constructor() { }
 

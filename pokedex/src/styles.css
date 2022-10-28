@@ -21,4 +21,8 @@ a {
     cursor: pointer;
 }
 
-
+body{
+    background-image: url('https://www.gamelivestory.com/images/article/pokemon-fan-builds-pokedex-ds-main.webp');
+    background-size:cover;
+    background-repeat: no-repeat;   
+}

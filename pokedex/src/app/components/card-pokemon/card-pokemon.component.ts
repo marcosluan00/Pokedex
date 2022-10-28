@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonList, PokemonListRequest, PokemonOne } from 'src/app/Core/Data/Pokemon';
-import { PokemonService } from 'src/app/Core/Api/pokemon.service';
+import { PokemonList, PokemonListRequest, PokemonOne } from 'src/app/core/data/Pokemon';
+import { PokemonService } from 'src/app/core/api/pokemon.service';
 import { map, Observable } from 'rxjs';
 
 @Component({

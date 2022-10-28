@@ -14,13 +14,14 @@ export class IndicatorBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.value = (this.value*100)/255
     this.changeColor()
   }
 
   changeColor(){
     if(this.value <= 30){
       this.corIndicator = 'linear-gradient(to right, #ff2600, #ad1a00)'
-    }else if(this.value > 30 && this.value <= 70){
+    }else if(this.value > 30 && this.value <= 60){
       this.corIndicator = 'linear-gradient(to right, #ebf542, #ffdc3b)'
     }else{
       this.corIndicator = 'linear-gradient(to right, #01d700, #01b900)'

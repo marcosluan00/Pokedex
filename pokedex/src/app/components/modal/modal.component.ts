@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PokemonOne } from 'src/app/Core/Data/Pokemon';
+import { PokemonOne } from 'src/app/core/data/Pokemon';
 
 @Component({
   selector: 'app-modal',

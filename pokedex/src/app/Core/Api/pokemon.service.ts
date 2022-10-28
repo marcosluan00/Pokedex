@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
-import { PokemonApiDetails, PokemonApiType, PokemonList, PokemonOne } from '../Data/Pokemon';
+import { PokemonApiDetails, PokemonApiType, PokemonList, PokemonOne } from '../data/Pokemon';
 import { map, lastValueFrom, Observable } from 'rxjs';
 
 @Injectable({
@@ -25,8 +25,9 @@ export class PokemonService {
       )     
   }
 
-  getOnePokemon(url: string): Observable<PokemonOne> {
-    return this.http.get<PokemonApiDetails>(url).pipe(
+  getOnePokemon(value: string): Observable<PokemonOne> {
+    
+    return this.http.get<PokemonApiDetails>(value).pipe(
       map(data => {
         return {
           order: data.order,

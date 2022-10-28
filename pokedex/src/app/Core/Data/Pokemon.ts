@@ -15,7 +15,7 @@ export interface PokemonList {
 
 export interface PokemonOne {
   order:number;
-  id: number;
+  id: string;
   name: string;
   height:number;
   weight:number;
@@ -32,7 +32,7 @@ export interface PokemonOne {
 
 export interface PokemonApiDetails {
   order: number;
-  id: number;
+  id: string;
   name: string;
   height: number;
   weight: number;
@@ -48,5 +48,4 @@ export interface PokemonListRequest {
   nextPage: string;
   previousPage: string;
   details: Promise<PokemonOne[]>
-  //Promise<PokemonOne>[]
 }
