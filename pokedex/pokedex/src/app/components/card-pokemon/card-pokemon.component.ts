@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonList, PokemonListRequest, PokemonOne } from 'src/app/core/data/Pokemon';
 import { PokemonService } from 'src/app/core/api/pokemon.service';
 import { map, Observable } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-pokemon',
@@ -13,42 +12,28 @@ export class CardPokemonComponent implements OnInit {
 
   pokemonRequest?: Observable<PokemonListRequest>;
 
-  offset: string = '';
-
   colorCard: string='normal';
 
-  constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
+    
     this.getPokemonList()
     
   }
 
-  // getPokemonListOffset(offset: string){
-  //   this.pokemonRequest = this.pokemonService.getPokemonListOffset(offset).pipe(
-  //     map((result:PokemonList) => {
-  //       return {
-  //         nextPage: result.nextPage,
-  //         previousPage: result.previousPage,
-  //         details: Promise.all<Promise<PokemonOne>[]>(result.detailsPokemon),  
-  //       }
-  //      }
-  //      )  
-  //   )
-  // }
-
   getPokemonList(){
     this.pokemonRequest = this.pokemonService.getPokemonList().pipe(
-      map((result: PokemonList) => {
+      map((result:PokemonList) => {
         return {
           nextPage: result.nextPage,
           previousPage: result.previousPage,
-          details: Promise.all<Promise<PokemonOne>[]>(result.detailsPokemon) 
+          details: Promise.all<Promise<PokemonOne>[]>(result.detailsPokemon)
         }
-      })
+       }
+       )   
     )
-  }
-
+    
+}
   
-
 }

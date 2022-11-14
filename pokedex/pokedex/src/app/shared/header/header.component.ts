@@ -15,8 +15,7 @@ export class HeaderComponent implements OnInit {
     route.events.pipe(
       filter((e: Event): e is RouterEvent => e instanceof RouterEvent)
     ).subscribe((e: RouterEvent) => {
-
-      if(e.url == '/pokemon' || e.url == '/pokemon/'){
+      if(e.url == '/pokemon'){
         return this.exibir = true
       } 
       return this.exibir = false

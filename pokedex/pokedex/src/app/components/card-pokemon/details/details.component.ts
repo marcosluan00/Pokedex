@@ -19,9 +19,9 @@ export class DetailsComponent implements OnInit {
    ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
 
-    let value = routeParams.get("id")
+    let url = `https://pokeapi.co/api/v2/pokemon/${routeParams.get("id")}/`
 
-    this.getOnePokemon(String(value))
+    this.getOnePokemon(url)
   }
 
   getOnePokemon(url: string){

@@ -6,7 +6,7 @@ import { DetailsComponent } from './components/card-pokemon/details/details.comp
 const routes: Routes = [
     { path: 'pokemon', component: CardPokemonComponent},
     { path: '', redirectTo: '/pokemon', pathMatch: 'full' },
-    { path: 'pokemon/:id', component: DetailsComponent},
+    { path: 'pokemon/:id', component: DetailsComponent}
 ]
 
 @NgModule({
