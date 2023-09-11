@@ -1,0 +1,21 @@
+<section>
+  <ng-container *ngIf="(pokemonRequest | async) as PokemonRequest">
+    <ng-container *ngIf="PokemonRequest.details">
+      <section *ngFor="let pokemon of PokemonRequest.details |async">
+
+        <a>
+          <div>
+            <p> {{pokemon.name | uppercase}}</p>
+            <div *ngFor="let type of pokemon.types">
+              <p>{{ type }}</p>
+            </div>
+            <div>
+              <img src="{{ pokemon.sprites.artwork_default }}" alt=" Ilustra do pokemon {{ pokemon.name }} ">
+            </div>
+          </div>
+        </a>
+
+      </section>
+    </ng-container>
+  </ng-container>
+</section>
