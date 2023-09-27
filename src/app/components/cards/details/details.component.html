@@ -1,0 +1,20 @@
+<main class="shadow-2xl rounded-xl sm:w-64 md:w-96" [background]="onePokemon.types[0]">
+    <header>
+        <div class="p-5 grid grid-cols-4">
+            <div class="col-span-3">
+                <p class="text-3xl font-bold  text-slate-100 capitalize">{{ onePokemon.name }}</p>
+                <div class="grid-cols-2">
+                    <p class="badge text-lg font-semibold mt-2 text-slate-50 capitalize mr-1 w-2/5 text-center"
+                        *ngFor="let type of onePokemon.types">{{ type }}</p>
+                </div>
+            </div>
+            <i class="p-5 text-2xl text-slate-100 font-bold"> #{{ idPokemon }}</i>
+        </div>
+    </header>
+
+    <div class="flex justify-center drop-shadow-lg hover:animate-bounce">
+        <img [src]="onePokemon.sprites.artwork_default" alt="{{ onePokemon.name }}" class="w-40 h-40
+        md:w-56 md:h-56">
+    </div>
+    <app-modal [pokemonDetails]="onePokemon"></app-modal>
+</main>

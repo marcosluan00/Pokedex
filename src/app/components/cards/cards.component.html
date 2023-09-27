@@ -1,21 +1,39 @@
-<section>
-  <ng-container *ngIf="(pokemonRequest | async) as PokemonRequest">
-    <ng-container *ngIf="PokemonRequest.details">
-      <section *ngFor="let pokemon of PokemonRequest.details |async">
+<main class="h-screen flex flex-row justify-center items-center"
+*ngIf="(pokemonRequest  | async) as pokemonR">
+<button (click)="decrementar()"  *ngIf="pokemonR.previousPage"
+class="bg-blue-500 hover:bg-blue-700 text-white font-bold m-1 p-2 h-10 rounded flex items-center">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+  </svg>
+  <p class="text-xs font-semibold  text-slate-50 uppercase">Previous</p>
+ </button>
+<section class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" >
+        <ng-container *ngIf="pokemonR.details">
+                <section *ngFor="let pokemon of pokemonR.details |async" class="max-w-5xl">
+                    <a class="p-2 shadow-md rounded-md grid grid-cols-2  my-2 xl:m-3 md:m-2 sm:m-1
+                    hover:scale-105 gap-x-0.5"
+                    routerLink="/pokemon/{{pokemon.id}}" [background]="pokemon.types[0]">
+                        <div class="p-1">
+                            <p class="text-xl font-bold text-slate-100">{{ pokemon.name | uppercase}}</p>
+                            <div class="badge p-1 mt-1 mr-12 text-center bg-slate-400 rounded-sm" *ngFor="let type of pokemon.types">
+                                <p class="text-xs font-semibold  text-slate-50 uppercase">{{ type }}</p>
+                            </div>
 
-        <a>
-          <div>
-            <p> {{pokemon.name | uppercase}}</p>
-            <div *ngFor="let type of pokemon.types">
-              <p>{{ type }}</p>
-            </div>
-            <div>
-              <img src="{{ pokemon.sprites.artwork_default }}" alt=" Ilustra do pokemon {{ pokemon.name }} ">
-            </div>
-          </div>
-        </a>
-
-      </section>
-    </ng-container>
-  </ng-container>
+                        </div>
+                        <div>
+                            <img src="{{ pokemon.sprites.artwork_default }}" alt="{{ pokemon.name }}" class="w-32 h-32 drop-shadow-lg ">
+                        </div>
+                    </a>
+                </section>
+        </ng-container>
 </section>
+
+ <button (click)="incrementar()" *ngIf="pokemonR.nextPage"
+ class="bg-blue-500 m-1 hover:bg-blue-700 text-white font-bold
+ p-2 rounded flex items-center h-10">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+  </svg>
+  <p class="text-xs font-semibold  text-slate-50 uppercase">Next</p>
+</button>
+</main>

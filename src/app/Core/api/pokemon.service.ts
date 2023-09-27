@@ -11,9 +11,11 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemonList(): Observable<PokemonList> {
-    return this.http.get<PokemonApiRequest>('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0').pipe(
+  getPokemonList( offset:number, limit:number ): Observable<PokemonList> {
+    return this.http.get<PokemonApiRequest>(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).pipe(
       map(data => {
+        console.log(data.next)
+        console.log(data.previous)
         return {
           nextPage: data.next,
           previousPage: data.previous,

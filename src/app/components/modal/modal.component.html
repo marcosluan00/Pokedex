@@ -1,0 +1,27 @@
+<nav class="bg-white p-2 rounded-xl my-2 h-64" >
+    <ul class="flex justify-around mb-2" style="cursor: pointer;">
+        <li><a [class.active]="option == 'about'" (click) = "option = 'about'">About</a></li>
+        <li><a [class.active]="option == 'stats'" (click) = "option = 'stats'">Base Stats</a></li>
+    </ul>
+    <div [ngSwitch]="option" class="mt-4 px-2" >
+        <section *ngSwitchCase="'about'">
+            <h5 class="capitalize text-slate-500 font-semibold my-2">Height : <i class="text-slate-900"> {{ pokemonDetails.height }} cm</i> </h5>
+            <h5 class="capitalize text-slate-500 font-semibold my-2">Weight : <i class="text-slate-900"> {{ pokemonDetails.weight }} kg</i> </h5>
+            <h5 class="capitalize text-slate-500 font-semibold my-2">Abilities : <i class="text-slate-900"> {{ pokemonDetails.abilities }}</i> </h5>
+
+        </section>
+        <section *ngSwitchCase="'stats'">
+
+            <div *ngFor="let stat of pokemonDetails.stats" class="grid grid-cols-2">
+            <div class=" flex justify-between my-1">
+                <h5 class="text-slate-500 font-semibold text-left"> {{ stat.name | titlecase}}:</h5>
+                <p class="text-slate-900 mr-3">{{ stat.value }}</p>
+            </div>
+
+            <app-indicator-bar [value]="stat.value"></app-indicator-bar>
+
+        </div>
+
+        </section>
+    </div>
+</nav>
