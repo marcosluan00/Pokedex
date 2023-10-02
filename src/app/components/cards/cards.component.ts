@@ -13,7 +13,7 @@ export class CardPokemonComponent implements OnInit {
   colorCard: string='normal';
 
   offset = 0;
-  limit = 16;
+  limit = 14;
 
   constructor(private pokemonService: PokemonService) { }
 
