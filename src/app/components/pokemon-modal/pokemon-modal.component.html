@@ -1,0 +1,83 @@
+@if(isOpen){
+  <div class="fixed bg-black bg-opacity-50 inset-0 z-50 flex items-center justify-center p-4"
+  (click)="closeModal()">
+
+  @if(pokemon){
+  <div (click)="stopPropagation($event)"
+  class="bg-white rounded-2xl shadow-xl max-w-2xl w-full overflow-hidden transform transition-all">
+
+  <div class="relative p-6" [ngStyle]="{'background': gradientColor}">
+    <div class="absolute top-2 right-1 w-32 h-32 opacity-10">
+      <svg viewBox="0 0 100 100" class="w-full h-full fill-current text-white">
+        <path d="M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 75c-13.8 0-25-11.2-25-25s11.2-25 25-25 25 11.2 25 25-11.2 25-25 25z"/>
+      </svg>
+    </div>
+    <button (click)="closeModal()"
+      class="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <span class="absolute z-50 bottom-4 right-4 text-2xl font-bold text-white/50">#{{pokemon.id.toString().padStart(3, '0')}}</span>
+
+    <div class="flex items-center gap-4">
+      <img 
+        [src]="pokemon.sprites.other['official-artwork'].front_default" 
+        [alt]="pokemon.name"
+        class="w-32 h-32 object-contain">
+      <div>
+        <h2 class="text-3xl font-bold text-white capitalize">{{pokemon.name}}</h2>
+        <div class="flex gap-2 mt-2">
+          <span 
+            *ngFor="let type of pokemon.types"
+            class="px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white capitalize">
+            {{type.type.name}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-6">
+    <div class="space-y-4">
+      <h3 class="text-xl font-semibold text-gray-800">Estados Básicos</h3>
+      <div class="space-y-3">
+        @for(stat of pokemon.stats; track pokemon.stats){
+          <div class="space-y-1">
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600 capitalize">{{stat.stat.name}}</span>
+              <span class="font-medium">{{stat.base_stat}}</span>
+            </div>
+            <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div 
+                class="h-full rounded-full transition-all duration-500"
+                [ngClass]="stat.base_stat | statColor"
+                [style.width.%]="getStatPercentage(stat.base_stat)"
+              ></div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="mt-6 grid grid-cols-2 gap-4">
+      <div>
+        <h4 class="text-sm text-gray-500">Altura</h4>
+        <p class="text-lg font-medium">{{pokemon.height / 10}} m</p>
+      </div>
+      <div>
+        <h4 class="text-sm text-gray-500">Peso</h4>
+        <p class="text-lg font-medium">{{pokemon.weight / 10}} kg</p>
+      </div>
+    </div>
+  </div>
+</div>
+  }
+  
+
+</div>
+
+}
+
+  
+ 

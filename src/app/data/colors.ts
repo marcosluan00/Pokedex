@@ -1,0 +1,20 @@
+export const typeColors: { [key: string]: { main: string, secondary: string } } = {
+    normal: { main: '#A8A878', secondary: '#B0B0A0' },
+    fire: { main: '#F08030', secondary: '#F3A06D' },
+    water: { main: '#6890F0', secondary: '#A0C4F7' },
+    electric: { main: '#F8D030', secondary: '#F8EBA0' },
+    grass: { main: '#78C850', secondary: '#A0D9A0' },
+    ice: { main: '#98D8D8', secondary: '#B0E0E0' },
+    fighting: { main: '#C03028', secondary: '#D05252' },
+    poison: { main: '#A040A0', secondary: '#B060B0' },
+    ground: { main: '#E0C068', secondary: '#E2D0A0' },
+    flying: { main: '#A890F0', secondary: '#B0A0E0' },
+    psychic: { main: '#F85888', secondary: '#F8A0B0' },
+    bug: { main: '#A8B820', secondary: '#B0C050' },
+    rock: { main: '#B8A038', secondary: '#C0B050' },
+    ghost: { main: '#705898', secondary: '#A080B0' },
+    dragon: { main: '#7038F8', secondary: '#A060D0' },
+    dark: { main: '#705848', secondary: '#A08080' },
+    steel: { main: '#B8B8D0', secondary: '#D0D0E0' },
+    fairy: { main: '#EE99AC', secondary: '#F0B0C0' }
+};
