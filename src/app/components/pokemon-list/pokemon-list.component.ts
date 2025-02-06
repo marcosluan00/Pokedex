@@ -51,7 +51,7 @@ export class PokemonListComponent implements OnInit, OnDestroy {
         },
         error: (error) => {
           console.error('Error loading Pokemon:', error);
-          this.error = 'Failed to load Pokemon. Please try again later.';
+          this.error = 'Erro ao carregar os Pokemon. Tente novamente mais tarde.';
         }
       });
   }
