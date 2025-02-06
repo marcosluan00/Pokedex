@@ -9,12 +9,14 @@
     <h2 class="text-2xl font-bold capitalize text-white mb-3">{{pokemon.name}}</h2>
   
     <div class="flex gap-2 mb-4">
-      <span
-        *ngFor="let type of pokemon.types"
+      @for(type of pokemon.types; track type){
+        <span
         class="px-4 py-1 rounded-full text-sm font-medium text-white capitalize"
         [style.background-color]="'rgba(255, 255, 255, 0.2)'">
         {{type.type.name}}
       </span>
+      }
+      
     </div>
   </div>
 
