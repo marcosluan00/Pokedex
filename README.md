@@ -1,27 +1,35 @@
-# Pokedex
+# Pokedex Project
+https://pokedex-sable-seven.vercel.app/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+🎉 **Bem-vindo ao Pokedex!** 🎉
 
-## Development server
+Este projeto é uma refatoração do nosso querido Pokedex antigo, mas agora com uma nova cara e funcionalidades incríveis! 🌟
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Como Começar
 
-## Code scaffolding
+Para começar a sua jornada no mundo Pokémon, você precisa instalar as dependências do projeto. Mas atenção! Para garantir que tudo funcione perfeitamente, use o seguinte comando:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install --legacy-peer-deps
+```
 
-## Build
+Isso mesmo! O `--legacy-peer-deps` é o seu novo melhor amigo para evitar conflitos de dependências e garantir que você tenha tudo o que precisa para explorar o mundo Pokémon!
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm s -o
+```
+Com isso você pode iniciar o projeto! diretamente na sua maquina.
 
-## Running unit tests
+## O que há de novo?
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Uma interface mais moderna e amigável
+- Funcionalidades aprimoradas
+- E muito mais!
 
-## Running end-to-end tests
+## Futuras Funcionalidades
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Pesquisa por Nome**: Encontre seu Pokémon favorito digitando seu nome!
+- **Criação do Seu Time**: Monte seu time dos sonhos e prepare-se para a batalha!
+- **Favoritar Pokémon**: Marque seus Pokémon favoritos para fácil acesso e visualização!
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Prepare-se para capturar todos os Pokémon! 🐾
